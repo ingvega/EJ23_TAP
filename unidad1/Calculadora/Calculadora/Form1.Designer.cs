@@ -92,45 +92,60 @@
             // 
             // btnSuma
             // 
+            this.btnSuma.BackColor = System.Drawing.Color.DarkCyan;
+            this.btnSuma.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSuma.ForeColor = System.Drawing.Color.White;
             this.btnSuma.Location = new System.Drawing.Point(60, 204);
             this.btnSuma.Name = "btnSuma";
-            this.btnSuma.Size = new System.Drawing.Size(75, 23);
+            this.btnSuma.Size = new System.Drawing.Size(75, 34);
             this.btnSuma.TabIndex = 6;
             this.btnSuma.Text = "Suma";
-            this.btnSuma.UseVisualStyleBackColor = true;
+            this.btnSuma.UseVisualStyleBackColor = false;
+            this.btnSuma.Click += new System.EventHandler(this.btnSuma_Click);
             // 
             // btnResta
             // 
-            this.btnResta.Location = new System.Drawing.Point(135, 204);
+            this.btnResta.BackColor = System.Drawing.Color.DarkCyan;
+            this.btnResta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnResta.ForeColor = System.Drawing.Color.White;
+            this.btnResta.Location = new System.Drawing.Point(141, 204);
             this.btnResta.Name = "btnResta";
-            this.btnResta.Size = new System.Drawing.Size(75, 23);
+            this.btnResta.Size = new System.Drawing.Size(75, 34);
             this.btnResta.TabIndex = 7;
             this.btnResta.Text = "Resta";
-            this.btnResta.UseVisualStyleBackColor = true;
+            this.btnResta.UseVisualStyleBackColor = false;
             // 
             // btnMultiplicacion
             // 
-            this.btnMultiplicacion.Location = new System.Drawing.Point(210, 204);
+            this.btnMultiplicacion.BackColor = System.Drawing.Color.DarkCyan;
+            this.btnMultiplicacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMultiplicacion.ForeColor = System.Drawing.Color.White;
+            this.btnMultiplicacion.Location = new System.Drawing.Point(222, 204);
             this.btnMultiplicacion.Name = "btnMultiplicacion";
-            this.btnMultiplicacion.Size = new System.Drawing.Size(105, 23);
+            this.btnMultiplicacion.Size = new System.Drawing.Size(105, 34);
             this.btnMultiplicacion.TabIndex = 8;
             this.btnMultiplicacion.Text = "Multiplicación";
-            this.btnMultiplicacion.UseVisualStyleBackColor = true;
+            this.btnMultiplicacion.UseVisualStyleBackColor = false;
+            this.btnMultiplicacion.Click += new System.EventHandler(this.btnMultiplicacion_Click);
             // 
             // btnDivision
             // 
-            this.btnDivision.Location = new System.Drawing.Point(315, 204);
+            this.btnDivision.BackColor = System.Drawing.Color.DarkCyan;
+            this.btnDivision.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDivision.ForeColor = System.Drawing.Color.White;
+            this.btnDivision.Location = new System.Drawing.Point(332, 204);
             this.btnDivision.Name = "btnDivision";
-            this.btnDivision.Size = new System.Drawing.Size(75, 23);
+            this.btnDivision.Size = new System.Drawing.Size(75, 34);
             this.btnDivision.TabIndex = 9;
             this.btnDivision.Text = "División";
-            this.btnDivision.UseVisualStyleBackColor = true;
+            this.btnDivision.UseVisualStyleBackColor = false;
+            this.btnDivision.Click += new System.EventHandler(this.btnDivision_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(490, 309);
             this.Controls.Add(this.btnDivision);
             this.Controls.Add(this.btnMultiplicacion);
             this.Controls.Add(this.btnResta);
@@ -142,7 +157,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Calculadora";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
