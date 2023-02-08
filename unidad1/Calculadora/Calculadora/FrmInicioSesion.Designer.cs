@@ -53,10 +53,9 @@
             // 
             this.txtContrasenia.Location = new System.Drawing.Point(164, 112);
             this.txtContrasenia.Name = "txtContrasenia";
-            this.txtContrasenia.PasswordChar = '*';
             this.txtContrasenia.Size = new System.Drawing.Size(198, 22);
             this.txtContrasenia.TabIndex = 2;
-            this.txtContrasenia.UseSystemPasswordChar = true;
+            this.txtContrasenia.TextChanged += new System.EventHandler(this.txtContrasenia_TextChanged);
             // 
             // btnIniciarSesion
             // 
@@ -72,7 +71,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(104, 88);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 16);
+            this.label1.Size = new System.Drawing.Size(57, 17);
             this.label1.TabIndex = 3;
             this.label1.Text = "Usuario";
             // 
@@ -81,7 +80,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(81, 118);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(76, 16);
+            this.label2.Size = new System.Drawing.Size(81, 17);
             this.label2.TabIndex = 4;
             this.label2.Text = "Contraseña";
             // 
@@ -91,7 +90,7 @@
             this.lblRetroUsuario.ForeColor = System.Drawing.Color.IndianRed;
             this.lblRetroUsuario.Location = new System.Drawing.Point(369, 88);
             this.lblRetroUsuario.Name = "lblRetroUsuario";
-            this.lblRetroUsuario.Size = new System.Drawing.Size(0, 16);
+            this.lblRetroUsuario.Size = new System.Drawing.Size(0, 17);
             this.lblRetroUsuario.TabIndex = 5;
             // 
             // lblRetroContrasenia
@@ -99,7 +98,7 @@
             this.lblRetroContrasenia.AutoSize = true;
             this.lblRetroContrasenia.Location = new System.Drawing.Point(369, 115);
             this.lblRetroContrasenia.Name = "lblRetroContrasenia";
-            this.lblRetroContrasenia.Size = new System.Drawing.Size(0, 16);
+            this.lblRetroContrasenia.Size = new System.Drawing.Size(0, 17);
             this.lblRetroContrasenia.TabIndex = 6;
             // 
             // epErrores
@@ -110,7 +109,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(743, 244);
+            this.ClientSize = new System.Drawing.Size(456, 244);
             this.Controls.Add(this.lblRetroContrasenia);
             this.Controls.Add(this.lblRetroUsuario);
             this.Controls.Add(this.label2);

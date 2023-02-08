@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -49,14 +50,37 @@ namespace Calculadora
 
         private void txtUsuario_KeyPress(object sender, KeyPressEventArgs e)
         {
-            int car = e.KeyChar;
+
             //Cuando el caracter no es ninguna de las teclas 
             //pertenecientes a letra mayúscula o minúscula, se deshace
             //el ingreso de la tecla
-            if (!((car >= 65 && car <= 90) || (car >= 97 && car <= 122))) {
+            //int car = e.KeyChar;
+            //if (!((car >= 65 && car <= 90) || (car >= 97 && car <= 122) || car==8)) {
+            //    e.Handled = true;
+            //}
+            int car = e.KeyChar;
+            if (!((car >= (int)Keys.A && car <= (int)Keys.Z) || 
+                (car >= ((int)Keys.A+32) && car <= ((int)Keys.Z+32)) || car == (int)Keys.Back))
+            {
                 e.Handled = true;
             }
             //lblRetroUsuario.Text+=car + " ";
+        }
+
+        private void txtContrasenia_TextChanged(object sender, EventArgs e)
+        {
+            //Regex patron = new Regex("[0-9][a-z][A-Z][#%&@]");
+            if(!(new Regex("[0-9]").IsMatch(txtContrasenia.Text) &&
+                new Regex("[a-z]").IsMatch(txtContrasenia.Text) &&
+                new Regex("[A-Z]").IsMatch(txtContrasenia.Text) &&
+                new Regex("[#%&@]").IsMatch(txtContrasenia.Text))) { 
+            //if (!patron.IsMatch(txtContrasenia.Text))
+            //{
+                epErrores.SetError(txtContrasenia, "Formato no válido");
+            }
+            else {
+                epErrores.SetError(txtContrasenia, "");
+            }
         }
     }
 }
