@@ -12,10 +12,27 @@ namespace Calculadora
 {
     public partial class FrmRegistro : Form
     {
+        List<Municipio> municipios = new List<Municipio>();
+        List<Estado> estados = new List<Estado>();
+
         public FrmRegistro()
         {
-            cboEstado.Items.Add("Guanajuato");
+            estados.Add(new Estado() { Clave=1, Nombre="Guanajuato"});
+            estados.Add(new Estado() { Clave=2, Nombre="Michoacan"});
+
+            municipios.Add(new Municipio() { Clave = 1, Nombre = "Moroleon", ClaveEstado=1 });
+            municipios.Add(new Municipio() { Clave = 2, Nombre = "Uriangato", ClaveEstado=1 });
+            municipios.Add(new Municipio() { Clave = 3, Nombre = "Yuriria", ClaveEstado=1 });
+            municipios.Add(new Municipio() { Clave = 4, Nombre = "Huandacareo", ClaveEstado=2 });
+            municipios.Add(new Municipio() { Clave = 5, Nombre = "Cuitzeo", ClaveEstado=2 });
+            municipios.Add(new Municipio() { Clave = 6, Nombre = "Morelia", ClaveEstado=2 });
+
             InitializeComponent();
+            cboEstado.Items.Add("Guanajuato");
+            for (int i = 0; i < estados.Count; i++)
+            {
+                cboEstado.Items.Add(estados[i]);
+            }
         }
 
         private void txtNombre_TextChanged(object sender, EventArgs e)
@@ -66,6 +83,22 @@ namespace Calculadora
             }
 
             epErrores.SetError(txtContrasenia2, mensajes);
+        }
+
+        private void cboEstado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Object estado = cboEstado.SelectedItem;
+            if (estado is String)
+            {
+                MessageBox.Show("Estado en cadena " + estado);
+            }
+            else /*if (estado is Estado)*/
+            {
+                Estado objEstado = (Estado)estado;
+                MessageBox.Show("Estado en objeto Clave: " + 
+                    objEstado.Clave + "\n Nombre: " +
+                    objEstado.Nombre);
+            }
         }
     }
 }
