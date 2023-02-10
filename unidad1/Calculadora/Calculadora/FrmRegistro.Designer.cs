@@ -80,7 +80,7 @@
             this.chkTerminos.AutoSize = true;
             this.chkTerminos.Location = new System.Drawing.Point(201, 206);
             this.chkTerminos.Name = "chkTerminos";
-            this.chkTerminos.Size = new System.Drawing.Size(244, 21);
+            this.chkTerminos.Size = new System.Drawing.Size(233, 20);
             this.chkTerminos.TabIndex = 3;
             this.chkTerminos.Text = "Acepto los términos y condiciones";
             this.chkTerminos.UseVisualStyleBackColor = true;
@@ -92,6 +92,7 @@
             this.cboEstado.Location = new System.Drawing.Point(201, 141);
             this.cboEstado.Name = "cboEstado";
             this.cboEstado.Size = new System.Drawing.Size(234, 24);
+            this.cboEstado.Sorted = true;
             this.cboEstado.TabIndex = 4;
             this.cboEstado.SelectedIndexChanged += new System.EventHandler(this.cboEstado_SelectedIndexChanged);
             // 
@@ -118,7 +119,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(75, 28);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(119, 17);
+            this.label1.Size = new System.Drawing.Size(115, 16);
             this.label1.TabIndex = 7;
             this.label1.Text = "Nombre completo";
             // 
@@ -127,7 +128,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(136, 59);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 17);
+            this.label2.Size = new System.Drawing.Size(54, 16);
             this.label2.TabIndex = 8;
             this.label2.Text = "Usuario";
             // 
@@ -136,7 +137,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(114, 92);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(81, 17);
+            this.label3.Size = new System.Drawing.Size(76, 16);
             this.label3.TabIndex = 9;
             this.label3.Text = "Contraseña";
             // 
@@ -145,7 +146,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(140, 144);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(52, 17);
+            this.label4.Size = new System.Drawing.Size(50, 16);
             this.label4.TabIndex = 10;
             this.label4.Text = "Estado";
             // 
@@ -154,7 +155,7 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(126, 171);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(67, 17);
+            this.label5.Size = new System.Drawing.Size(64, 16);
             this.label5.TabIndex = 11;
             this.label5.Text = "Municipio";
             // 
@@ -172,7 +173,7 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(56, 120);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(144, 17);
+            this.label6.Size = new System.Drawing.Size(134, 16);
             this.label6.TabIndex = 14;
             this.label6.Text = "Confirmar contraseña";
             // 
