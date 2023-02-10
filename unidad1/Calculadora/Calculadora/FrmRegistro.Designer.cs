@@ -92,7 +92,6 @@
             this.cboEstado.Location = new System.Drawing.Point(201, 141);
             this.cboEstado.Name = "cboEstado";
             this.cboEstado.Size = new System.Drawing.Size(234, 24);
-            this.cboEstado.Sorted = true;
             this.cboEstado.TabIndex = 4;
             this.cboEstado.SelectedIndexChanged += new System.EventHandler(this.cboEstado_SelectedIndexChanged);
             // 

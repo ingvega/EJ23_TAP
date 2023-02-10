@@ -17,9 +17,10 @@ namespace Calculadora
 
         public FrmRegistro()
         {
-            
+            //estados.Add(new Estado() { Clave = 3, Nombre = "Queretaro" });
             estados.Add(new Estado() { Clave = 2, Nombre="Michoacan"});
             estados.Add(new Estado() { Clave = 1, Nombre = "Guanajuato" });
+            
 
             municipios.Add(new Municipio() { Clave = 1, Nombre = "Moroleon", ClaveEstado=1 });
             municipios.Add(new Municipio() { Clave = 2, Nombre = "Uriangato", ClaveEstado=1 });
@@ -44,7 +45,10 @@ namespace Calculadora
             cboEstado.DisplayMember = "Nombre"; //Lo que el usuario ve
             cboEstado.ValueMember = "Clave"; //Lo que como programadores podemos obtener con la propiedad SelectedValue
 
-            cboEstado.DataSource = estados;
+            //Obtiene la lista de estados ordenados de manera ascendente por el nombre
+            List<Estado> estadosOrdenados = estados.OrderBy(estado => estado.Nombre).ToList();
+            cboEstado.DataSource = estadosOrdenados;
+            
             cboEstado.SelectedValue = 1;
 
         }
@@ -102,14 +106,22 @@ namespace Calculadora
         private void cboEstado_SelectedIndexChanged(object sender, EventArgs e)
         {
             List<Municipio> municipiosFiltrados = new List<Municipio>();
-            //int claveEstado = int.Parse(cboEstado.SelectedValue.ToString());
             int claveEstado = Convert.ToInt32(cboEstado.SelectedValue);
-            foreach (Municipio municipio in municipios)
-            {
-                if(municipio.ClaveEstado==claveEstado)
-                    municipiosFiltrados.Add(municipio);
-            }
 
+            municipiosFiltrados = 
+                municipios.Where(municipio => municipio.ClaveEstado == claveEstado)
+                          .OrderBy(municipio => municipio.Nombre)
+                          .ToList();
+
+
+            //Filtrado manual de los estados
+            //int claveEstado = int.Parse(cboEstado.SelectedValue.ToString());
+            //foreach (Municipio municipio in municipios)
+            //{
+            //    if(municipio.ClaveEstado==claveEstado)
+            //        municipiosFiltrados.Add(municipio);
+            //}
+            
             cboMunicipio.DataSource = municipiosFiltrados;
             cboMunicipio.DisplayMember = "Nombre";
             cboMunicipio.ValueMember = "Clave";
