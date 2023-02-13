@@ -14,8 +14,13 @@ namespace Calculadora
     {
         List<Municipio> municipios = new List<Municipio>();
         List<Estado> estados = new List<Estado>();
-
-        public FrmRegistro()
+        private FrmInicioSesion frmLogin;
+        public FrmRegistro(FrmInicioSesion frmLogin):this()
+        {
+            this.frmLogin = frmLogin;
+            
+        }
+            public FrmRegistro()
         {
             //estados.Add(new Estado() { Clave = 3, Nombre = "Queretaro" });
             estados.Add(new Estado() { Clave = 2, Nombre="Michoacan"});
@@ -144,6 +149,12 @@ namespace Calculadora
                     objEstado.Nombre);
             }
             */
+        }
+
+        private void btnYaTengoCuenta_Click(object sender, EventArgs e)
+        {
+            new FrmInicioSesion().Show();
+            this.Close();
         }
     }
 }

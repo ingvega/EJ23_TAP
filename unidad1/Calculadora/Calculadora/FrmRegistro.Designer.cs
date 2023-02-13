@@ -106,7 +106,7 @@
             // 
             // btnRegistrarme
             // 
-            this.btnRegistrarme.Location = new System.Drawing.Point(201, 248);
+            this.btnRegistrarme.Location = new System.Drawing.Point(145, 254);
             this.btnRegistrarme.Name = "btnRegistrarme";
             this.btnRegistrarme.Size = new System.Drawing.Size(111, 36);
             this.btnRegistrarme.TabIndex = 6;
@@ -160,12 +160,13 @@
             // 
             // btnYaTengoCuenta
             // 
-            this.btnYaTengoCuenta.Location = new System.Drawing.Point(318, 248);
+            this.btnYaTengoCuenta.Location = new System.Drawing.Point(262, 254);
             this.btnYaTengoCuenta.Name = "btnYaTengoCuenta";
             this.btnYaTengoCuenta.Size = new System.Drawing.Size(162, 36);
             this.btnYaTengoCuenta.TabIndex = 12;
             this.btnYaTengoCuenta.Text = "Ya tengo una cuenta";
             this.btnYaTengoCuenta.UseVisualStyleBackColor = true;
+            this.btnYaTengoCuenta.Click += new System.EventHandler(this.btnYaTengoCuenta_Click);
             // 
             // label6
             // 

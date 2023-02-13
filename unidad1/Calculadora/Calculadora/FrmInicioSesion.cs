@@ -82,5 +82,18 @@ namespace Calculadora
                 epErrores.SetError(txtContrasenia, "");
             }
         }
+
+        private void btnRegistrarme_Click(object sender, EventArgs e)
+        {
+            FrmRegistro frmRegistrar = new FrmRegistro(this);
+            frmRegistrar.Visible = true;
+            //OCulta el formulario actual
+            //this.Visible = false;
+            Hide();
+            //Cierra el form actual
+            //this.Close();
+            //this.Dispose();
+
+        }
     }
 }
