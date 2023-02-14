@@ -1,4 +1,4 @@
-﻿namespace Calculadora
+﻿namespace GUI
 {
     partial class FrmInicioSesion
     {
