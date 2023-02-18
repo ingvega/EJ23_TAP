@@ -28,7 +28,8 @@ namespace GUI
             foreach (Button btn in panel1.Controls)
             {
                 btn.Click += new EventHandler(eventoBoton);
-                btn.KeyPress += new KeyPressEventHandler(eventoTecla); 
+                btn.KeyPress += new KeyPressEventHandler(eventoTecla);
+                
                 
             }
         }
@@ -82,6 +83,31 @@ namespace GUI
         private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
         {
 
+        }
+
+        private void crearLaboratorioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            String respuesta;
+            int lugares=0;
+            do {
+                InputDialog frmDialogo = new InputDialog();
+                frmDialogo.Titulo = "Configuración del boratorio";
+                frmDialogo.Text = "¿Cuántos espacios deseas que tenga el laboratorio?";
+                frmDialogo.ShowDialog();
+                respuesta = frmDialogo.Valor;
+            } while(respuesta!=null && (respuesta.Trim().Equals("") || !int.TryParse(respuesta,out lugares)));
+
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void desocuparToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(sender.ToString());
+            MessageBox.Show(contextMenuStrip2.SourceControl.ToString());
         }
     }
 }
