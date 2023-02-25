@@ -44,6 +44,7 @@
             this.txtPassword.Size = new System.Drawing.Size(271, 28);
             this.txtPassword.TabIndex = 0;
             this.txtPassword.UseSystemPasswordChar = true;
+            this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
             // 
             // picShowHide
             // 
@@ -73,8 +74,7 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.PictureBox picShowHide;
+        public System.Windows.Forms.TextBox txtPassword;
     }
 }

@@ -25,6 +25,18 @@ namespace ControlesDeUsuario
             set { clickBehavior = value; }
         }
 
+        private String texto;
+
+        public String Texto
+        {
+            get { return texto; }
+            set { 
+                texto = value; 
+                txtPassword.Text = texto;    
+            }
+        }
+
+
 
         public PasswordTextBox()
         {
@@ -34,6 +46,11 @@ namespace ControlesDeUsuario
         private void picShowHide_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtPassword_TextChanged(object sender, EventArgs e)
+        {
+            texto = txtPassword.Text;
         }
     }
 }
