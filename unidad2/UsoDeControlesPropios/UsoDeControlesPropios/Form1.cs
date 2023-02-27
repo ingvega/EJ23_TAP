@@ -38,5 +38,28 @@ namespace UsoDeControlesPropios
             MessageBox.Show("El password es " +
                 passwordTextBox1.txtPassword.Text);
         }
+
+        private void passwordTextBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (passwordTextBox1.Texto.Length >= 6)
+            {
+                passwordTextBox1.BackColor = Color.Green;
+            }
+            else {
+                passwordTextBox1.BackColor = Color.Gray;
+            }
+        }
+
+        private void passwordTextBox1_PasswordChanged(object sender, EventArgs e)
+        {
+            if (passwordTextBox1.Texto.Length >= 6)
+            {
+                passwordTextBox1.BackColor = Color.Green;
+            }
+            else
+            {
+                passwordTextBox1.BackColor = Color.Gray;
+            }
+        }
     }
 }

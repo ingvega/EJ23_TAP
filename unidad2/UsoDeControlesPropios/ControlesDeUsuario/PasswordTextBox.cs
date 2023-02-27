@@ -17,12 +17,14 @@ namespace ControlesDeUsuario
     }
     public partial class PasswordTextBox : UserControl
     {
-        private Behavior clickBehavior;
+        private Behavior behavior;
 
-        public Behavior behavior
+        public event EventHandler PasswordChanged;
+        
+        public Behavior Behavior
         {
-            get { return clickBehavior; }
-            set { clickBehavior = value; }
+            get { return behavior; }
+            set { behavior = value; }
         }
 
         private String texto;
@@ -35,9 +37,6 @@ namespace ControlesDeUsuario
                 txtPassword.Text = texto;    
             }
         }
-
-
-
         public PasswordTextBox()
         {
             InitializeComponent();
@@ -51,6 +50,10 @@ namespace ControlesDeUsuario
         private void txtPassword_TextChanged(object sender, EventArgs e)
         {
             texto = txtPassword.Text;
+            //Difundir la notificación de que el cambio de password está ocurriendo
+            if(PasswordChanged!=null)
+                PasswordChanged(this, e);
+            //PasswordChanged?.Invoke(this, e);
         }
     }
 }

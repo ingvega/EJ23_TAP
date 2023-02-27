@@ -58,12 +58,15 @@
             // 
             // passwordTextBox1
             // 
-            this.passwordTextBox1.behavior = ControlesDeUsuario.Behavior.Click;
+            this.passwordTextBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.passwordTextBox1.Behavior = ControlesDeUsuario.Behavior.Click;
             this.passwordTextBox1.Location = new System.Drawing.Point(30, 193);
             this.passwordTextBox1.Name = "passwordTextBox1";
             this.passwordTextBox1.Size = new System.Drawing.Size(386, 36);
             this.passwordTextBox1.TabIndex = 3;
             this.passwordTextBox1.Texto = "Hola";
+            this.passwordTextBox1.PasswordChanged += new System.EventHandler(this.passwordTextBox1_PasswordChanged);
+            this.passwordTextBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.passwordTextBox1_KeyPress);
             // 
             // focusableTextBox3
             // 
