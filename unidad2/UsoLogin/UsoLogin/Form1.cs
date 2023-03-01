@@ -16,5 +16,15 @@ namespace UsoLogin
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Ocurrió el click");
+        }
+
+        private void login1_ClickIniciar(object sender, ControlLogin.DatosLogin e)
+        {
+            MessageBox.Show(e.Usuario + " - " + e.Contrasenia);
+        }
     }
 }

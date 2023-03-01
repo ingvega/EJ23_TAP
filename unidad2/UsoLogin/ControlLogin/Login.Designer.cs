@@ -51,6 +51,7 @@
             this.txtContrasenia.Name = "txtContrasenia";
             this.txtContrasenia.Size = new System.Drawing.Size(225, 22);
             this.txtContrasenia.TabIndex = 1;
+            this.txtContrasenia.UseSystemPasswordChar = true;
             // 
             // label1
             // 
@@ -108,6 +109,7 @@
             this.btnInciar.TabIndex = 7;
             this.btnInciar.Text = "Iniciar sesión";
             this.btnInciar.UseVisualStyleBackColor = true;
+            this.btnInciar.Click += new System.EventHandler(this.btnInciar_Click);
             // 
             // Login
             // 

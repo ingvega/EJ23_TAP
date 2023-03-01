@@ -13,6 +13,12 @@ namespace ControlLogin
     public partial class Login : UserControl
     {
         private Boolean recordarmeVisible = true;
+        //Definir un evento sin pasar datos
+        public event EventHandler NombreEvento;
+
+        //Definir un evento que difundirá datos
+        public event EventHandler<ClaseConPropiedades> NombreEventoMensaje;
+
         public event EventHandler<DatosLogin> ClickIniciar;
 
         public Boolean RecordarmeVisible
@@ -29,6 +35,18 @@ namespace ControlLogin
         public Login()
         {
             InitializeComponent();
+        }
+
+        private void btnInciar_Click(object sender, EventArgs e)
+        {
+            DatosLogin datosMensaje = new DatosLogin();
+            datosMensaje.Usuario = txtUsuario.Text;
+            datosMensaje.Contrasenia = txtContrasenia.Text;
+            //Difundir el evento (notificación) 
+            //Siempre y cuando esté listo
+            //Si aún se está cargando trae NULL
+            ClickIniciar?.Invoke(this,datosMensaje);
+            //Evento?.Invoke(this,new EventArgs());
         }
     }
 }
