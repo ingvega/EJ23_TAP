@@ -51,9 +51,10 @@ namespace ControlesDeUsuario
         {
             texto = txtPassword.Text;
             //Difundir la notificación de que el cambio de password está ocurriendo
-            if(PasswordChanged!=null)
-                PasswordChanged(this, e);
-            //PasswordChanged?.Invoke(this, e);
+            //Verificar primero que el evento ya está listo para difundirse (que no tenga null)
+            //if(PasswordChanged!=null)
+            //    PasswordChanged(this, e);
+            PasswordChanged?.Invoke(this, e);
         }
     }
 }
