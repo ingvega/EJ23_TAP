@@ -10,11 +10,13 @@ using System.Windows.Forms;
 
 namespace UsoLogin
 {
-    public partial class Form1 : Form
+    public partial class Form1 : MetroFramework.Forms.MetroForm
     {
         public Form1()
         {
             InitializeComponent();
+
+            login1.RecordarmeVisible = false;
         }
 
         private void button1_Click(object sender, EventArgs e)

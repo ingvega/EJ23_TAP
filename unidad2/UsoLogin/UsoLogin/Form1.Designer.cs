@@ -34,9 +34,8 @@
             // 
             // login1
             // 
-            this.login1.Location = new System.Drawing.Point(52, 30);
+            this.login1.Location = new System.Drawing.Point(54, 106);
             this.login1.Name = "login1";
-            this.login1.RecordarmeVisible = true;
             this.login1.Size = new System.Drawing.Size(357, 243);
             this.login1.TabIndex = 0;
             this.login1.ClickIniciar += new System.EventHandler<ControlLogin.DatosLogin>(this.login1_ClickIniciar);

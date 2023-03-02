@@ -14,13 +14,18 @@ namespace ControlLogin
     {
         private Boolean recordarmeVisible = true;
         //Definir un evento sin pasar datos
-        public event EventHandler NombreEvento;
+        //public event EventHandler NombreEvento;
 
-        //Definir un evento que difundirá datos
-        public event EventHandler<ClaseConPropiedades> NombreEventoMensaje;
+        ////Definir un evento que difundirá datos
+        //public event EventHandler<ClaseConPropiedades> NombreEventoMensaje;
 
         public event EventHandler<DatosLogin> ClickIniciar;
 
+        
+        /// <summary>
+        /// Define la visibilidad de la casilla de verificación Recordarme
+        /// </summary>
+        [Description("Define la visibilidad de la casilla de verificación "), Category("Visibilidad"),ReadOnly(true)]
         public Boolean RecordarmeVisible
         {
             get {
