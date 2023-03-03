@@ -34,6 +34,7 @@
             this.focusableTextBox3 = new ControlesDeUsuario.FocusableTextBox();
             this.focusableTextBox2 = new ControlesDeUsuario.FocusableTextBox();
             this.focusableTextBox1 = new ControlesDeUsuario.FocusableTextBox();
+            this.passwordTextBox2 = new ControlesDeUsuario.PasswordTextBox();
             this.SuspendLayout();
             // 
             // button1
@@ -59,7 +60,7 @@
             // passwordTextBox1
             // 
             this.passwordTextBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.passwordTextBox1.Behavior = ControlesDeUsuario.Behavior.Click;
+            this.passwordTextBox1.ComportamientoVisibilidad = ControlesDeUsuario.ComportamientoVisibilidad.Click;
             this.passwordTextBox1.Location = new System.Drawing.Point(30, 193);
             this.passwordTextBox1.Name = "passwordTextBox1";
             this.passwordTextBox1.Size = new System.Drawing.Size(386, 36);
@@ -92,10 +93,20 @@
             this.focusableTextBox1.Size = new System.Drawing.Size(100, 22);
             this.focusableTextBox1.TabIndex = 0;
             // 
+            // passwordTextBox2
+            // 
+            this.passwordTextBox2.ComportamientoVisibilidad = ControlesDeUsuario.ComportamientoVisibilidad.ClickPressed;
+            this.passwordTextBox2.Location = new System.Drawing.Point(30, 21);
+            this.passwordTextBox2.Name = "passwordTextBox2";
+            this.passwordTextBox2.Size = new System.Drawing.Size(309, 36);
+            this.passwordTextBox2.TabIndex = 6;
+            this.passwordTextBox2.Texto = "Ejemplo";
+            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(461, 264);
+            this.Controls.Add(this.passwordTextBox2);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.passwordTextBox1);
@@ -117,6 +128,7 @@
         private ControlesDeUsuario.PasswordTextBox passwordTextBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private ControlesDeUsuario.PasswordTextBox passwordTextBox2;
     }
 }
 

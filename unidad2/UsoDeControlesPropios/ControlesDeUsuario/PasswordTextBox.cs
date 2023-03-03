@@ -10,21 +10,23 @@ using System.Windows.Forms;
 
 namespace ControlesDeUsuario
 {
-    public enum Behavior
+    public enum ComportamientoVisibilidad
     {
         Click, //Click para ocultar, click para mostrar
         ClickPressed //Click para mostrar y soltar para ocultar
     }
     public partial class PasswordTextBox : UserControl
     {
-        private Behavior behavior;
+        //Asignar el valor predeterminado que queremos que tenga la propiedad
+        private ComportamientoVisibilidad comportamientoVisibilidad=
+            ComportamientoVisibilidad.ClickPressed;
 
         public event EventHandler PasswordChanged;
         
-        public Behavior Behavior
+        public ComportamientoVisibilidad ComportamientoVisibilidad
         {
-            get { return behavior; }
-            set { behavior = value; }
+            get { return comportamientoVisibilidad; }
+            set { comportamientoVisibilidad = value; }
         }
 
         private String texto;
@@ -42,9 +44,25 @@ namespace ControlesDeUsuario
             InitializeComponent();
         }
 
+
+
         private void picShowHide_Click(object sender, EventArgs e)
         {
-
+            //Solo funciona mientras que el comportamiento se haya establecido como Click
+            if (ComportamientoVisibilidad == ComportamientoVisibilidad.Click)
+            {
+                //Cambia la vibililidad del texto a password y 
+                //viceversa, sería equivalente al if de abajo
+                txtPassword.UseSystemPasswordChar =
+                    !txtPassword.UseSystemPasswordChar;
+                //if (txtPassword.UseSystemPasswordChar)
+                //{
+                //    txtPassword.UseSystemPasswordChar = false;
+                //}
+                //else {
+                //    txtPassword.UseSystemPasswordChar = true;
+                //}
+            }
         }
 
         private void txtPassword_TextChanged(object sender, EventArgs e)
@@ -55,6 +73,22 @@ namespace ControlesDeUsuario
             //if(PasswordChanged!=null)
             //    PasswordChanged(this, e);
             PasswordChanged?.Invoke(this, e);
+        }
+
+        private void picShowHide_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (ComportamientoVisibilidad == ComportamientoVisibilidad.ClickPressed)
+            {
+                txtPassword.UseSystemPasswordChar=false;
+            }
+        }
+
+        private void picShowHide_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (ComportamientoVisibilidad == ComportamientoVisibilidad.ClickPressed)
+            {
+                txtPassword.UseSystemPasswordChar = true;
+            }
         }
     }
 }

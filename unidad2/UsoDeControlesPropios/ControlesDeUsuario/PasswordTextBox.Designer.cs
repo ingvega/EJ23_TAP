@@ -38,8 +38,8 @@
             this.txtPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPassword.Location = new System.Drawing.Point(3, 4);
-            this.txtPassword.Multiline = true;
+            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.Location = new System.Drawing.Point(3, 3);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(271, 28);
             this.txtPassword.TabIndex = 0;
@@ -58,6 +58,8 @@
             this.picShowHide.TabIndex = 1;
             this.picShowHide.TabStop = false;
             this.picShowHide.Click += new System.EventHandler(this.picShowHide_Click);
+            this.picShowHide.MouseDown += new System.Windows.Forms.MouseEventHandler(this.picShowHide_MouseDown);
+            this.picShowHide.MouseUp += new System.Windows.Forms.MouseEventHandler(this.picShowHide_MouseUp);
             // 
             // PasswordTextBox
             // 
