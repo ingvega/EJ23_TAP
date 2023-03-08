@@ -34,7 +34,7 @@ namespace UsoLibrerias
             // 
             // metroButton1
             // 
-            this.metroButton1.Location = new System.Drawing.Point(163, 118);
+            this.metroButton1.Location = new System.Drawing.Point(209, 83);
             this.metroButton1.Name = "metroButton1";
             this.metroButton1.Size = new System.Drawing.Size(178, 43);
             this.metroButton1.TabIndex = 0;
