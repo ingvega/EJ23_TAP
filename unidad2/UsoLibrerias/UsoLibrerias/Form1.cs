@@ -17,5 +17,12 @@ namespace UsoLibrerias
             InitializeComponent();
             
         }
+
+        private void btnConvertir_Click(object sender, EventArgs e)
+        {
+            double metros = double.Parse(txtDatos.Text);
+            double pies = Conversiones.ConversionesMedida.MetrosAPies(metros);
+            MessageBox.Show(metros + "m equivalen a " + pies + "ft");
+        }
     }
 }

@@ -99,6 +99,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="imgs\hide.jpg" />
     <Content Include="librerias\ControlLogin2.dll" />
     <Content Include="librerias\Conversiones.dll" />
     <Content Include="MetroFramework.txt" />
