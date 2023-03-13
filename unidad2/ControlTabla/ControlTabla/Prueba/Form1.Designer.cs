@@ -34,13 +34,14 @@
             // tabla1
             // 
             this.tabla1.Columnas = new string[] {
-        "Uno",
-        "Dos",
-        "Tres"};
+        "a",
+        "b",
+        "c",
+        "d"};
             this.tabla1.Filas = 0;
-            this.tabla1.Location = new System.Drawing.Point(164, 110);
+            this.tabla1.Location = new System.Drawing.Point(34, 64);
             this.tabla1.Name = "tabla1";
-            this.tabla1.Size = new System.Drawing.Size(471, 92);
+            this.tabla1.Size = new System.Drawing.Size(159, 92);
             this.tabla1.TabIndex = 0;
             // 
             // Form1

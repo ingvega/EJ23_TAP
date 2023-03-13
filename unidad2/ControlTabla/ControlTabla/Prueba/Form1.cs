@@ -15,6 +15,10 @@ namespace Prueba
         public Form1()
         {
             InitializeComponent();
+            tabla1.Columnas = new string[] { "Nombre",
+                                "Apellidos",
+                                "Direccion",
+                                "Semestre"};
         }
     }
 }

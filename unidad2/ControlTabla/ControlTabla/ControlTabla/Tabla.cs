@@ -17,7 +17,14 @@ namespace ControlTabla
         public int Filas
         {
             get { return filas; }
-            set { filas = value; }
+            set {
+                filas = value;
+                if (filas < 0) 
+                    filas = 0;
+
+                tlpContenido.RowCount = value+1;
+                pintarTabla();
+            }
         }
 
         private String[] columnas;
@@ -27,16 +34,38 @@ namespace ControlTabla
             get { return columnas; }
             set { 
                 columnas = value;
-                tlpContenido.ColumnCount=columnas.Length;
-                //Dibujar un botón por cada String en el arreglo
-                for (int i = 0; i < columnas.Length; i++)
-                {
-                    Button btn = new Button();
-                    btn.Text = columnas[i];
-                    tlpContenido.Controls.Add(btn);
-                }
+                if (columnas != null)
+                    tlpContenido.ColumnCount = columnas.Length;
+                else
+                    tlpContenido.ColumnCount = 1;
+                pintarTabla();
             
             }
+        }
+
+        private void pintarTabla() {
+            //Reiniciar el layout (quitar los controles ya dibujados)
+            tlpContenido.Controls.Clear();
+            //Dibujar un botón por cada String en el arreglo
+            for (int i = 0; i < tlpContenido.ColumnCount && columnas!=null; i++)
+            {
+                Button btn = new Button();
+                btn.Text = columnas[i];
+                tlpContenido.Controls.Add(btn);
+                tlpContenido.ColumnStyles[i].SizeType = SizeType.AutoSize;
+            }
+
+            for (int i = 0; i < filas; i++)
+            {
+                tlpContenido.RowStyles[i].SizeType = SizeType.AutoSize;
+                for (int j = 0; j < tlpContenido.ColumnCount; j++)
+                {
+                    TextBox txt= new TextBox();
+                    tlpContenido.Controls.Add(txt);
+                }
+            }
+            //tlpContenido.RowStyles[filas].SizeType = SizeType.AutoSize;
+
         }
 
 

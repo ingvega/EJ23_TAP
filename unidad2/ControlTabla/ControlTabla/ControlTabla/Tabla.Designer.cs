@@ -41,11 +41,11 @@
             this.tlpContenido.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpContenido.Location = new System.Drawing.Point(0, 0);
             this.tlpContenido.Name = "tlpContenido";
-            this.tlpContenido.RowCount = 2;
+            this.tlpContenido.RowCount = 1;
             this.tlpContenido.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpContenido.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpContenido.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpContenido.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpContenido.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 92F));
+            this.tlpContenido.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 92F));
             this.tlpContenido.Size = new System.Drawing.Size(159, 92);
             this.tlpContenido.TabIndex = 0;
             // 
