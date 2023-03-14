@@ -22,7 +22,6 @@ namespace ControlTabla
                 if (filas < 0) 
                     filas = 0;
 
-                tlpContenido.RowCount = value+1;
                 pintarTabla();
             }
         }
@@ -34,10 +33,7 @@ namespace ControlTabla
             get { return columnas; }
             set { 
                 columnas = value;
-                if (columnas != null)
-                    tlpContenido.ColumnCount = columnas.Length;
-                else
-                    tlpContenido.ColumnCount = 1;
+                
                 pintarTabla();
             
             }
@@ -45,19 +41,28 @@ namespace ControlTabla
 
         private void pintarTabla() {
             //Reiniciar el layout (quitar los controles ya dibujados)
-            tlpContenido.Controls.Clear();
+            //tlpContenido.Controls.Clear();
+            this.Controls.Clear();
+            TableLayoutPanel tlpContenido=new TableLayoutPanel();
+            tlpContenido.Dock=DockStyle.Fill;
+            this.Controls.Add(tlpContenido);
+
+            if (columnas != null)
+                    tlpContenido.ColumnCount = columnas.Length;
+                
+            tlpContenido.RowCount = filas+1;
             //Dibujar un botón por cada String en el arreglo
-            for (int i = 0; i < tlpContenido.ColumnCount && columnas!=null; i++)
+            for (int i = 0; i < tlpContenido.ColumnCount; i++)
             {
                 Button btn = new Button();
                 btn.Text = columnas[i];
                 tlpContenido.Controls.Add(btn);
-                tlpContenido.ColumnStyles[i].SizeType = SizeType.AutoSize;
+                //tlpContenido.ColumnStyles[i].SizeType = SizeType.AutoSize;
             }
 
             for (int i = 0; i < filas; i++)
             {
-                tlpContenido.RowStyles[i].SizeType = SizeType.AutoSize;
+                //tlpContenido.RowStyles[i].SizeType = SizeType.AutoSize;
                 for (int j = 0; j < tlpContenido.ColumnCount; j++)
                 {
                     TextBox txt= new TextBox();
@@ -66,12 +71,32 @@ namespace ControlTabla
             }
             //tlpContenido.RowStyles[filas].SizeType = SizeType.AutoSize;
 
+            for (int i = 0; i < tlpContenido.ColumnStyles.Count; i++)
+            {
+                tlpContenido.ColumnStyles[i].SizeType = SizeType.AutoSize;
+            }
+
+            for (int i = 0; i < tlpContenido.RowStyles.Count; i++)
+            {
+                tlpContenido.RowStyles[i].SizeType = SizeType.AutoSize;
+            }
+
         }
 
 
         public Tabla()
         {
             InitializeComponent();
+        }
+
+        public String obtenerValor(int fila, int columna) {
+            //Verificar que los valores son válidos
+
+            //Acceder a la caja de texto
+            TextBox txt=(TextBox) tlpContenido.GetControlFromPosition(columna, fila+1);
+
+            return txt.Text;
+
         }
     }
 }

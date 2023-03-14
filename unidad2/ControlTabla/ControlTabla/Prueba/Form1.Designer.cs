@@ -37,11 +37,12 @@
         "a",
         "b",
         "c",
-        "d"};
-            this.tabla1.Filas = 0;
+        "d",
+        "e"};
+            this.tabla1.Filas = 5;
             this.tabla1.Location = new System.Drawing.Point(34, 64);
             this.tabla1.Name = "tabla1";
-            this.tabla1.Size = new System.Drawing.Size(159, 92);
+            this.tabla1.Size = new System.Drawing.Size(607, 194);
             this.tabla1.TabIndex = 0;
             // 
             // Form1

@@ -18,7 +18,8 @@ namespace Prueba
             tabla1.Columnas = new string[] { "Nombre",
                                 "Apellidos",
                                 "Direccion",
-                                "Semestre"};
+                                "Semestre",
+            "No Control"};
         }
     }
 }
