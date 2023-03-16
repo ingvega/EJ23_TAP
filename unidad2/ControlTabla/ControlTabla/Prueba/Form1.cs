@@ -20,6 +20,18 @@ namespace Prueba
                                 "Direccion",
                                 "Semestre",
             "No Control"};
+            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            tabla1.asignarValor(1, 1, "Hola");
+            MessageBox.Show(tabla1.obtenerValor(1, 1));
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

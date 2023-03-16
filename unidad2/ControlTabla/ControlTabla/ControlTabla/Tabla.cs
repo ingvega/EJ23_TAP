@@ -43,7 +43,7 @@ namespace ControlTabla
             //Reiniciar el layout (quitar los controles ya dibujados)
             //tlpContenido.Controls.Clear();
             this.Controls.Clear();
-            TableLayoutPanel tlpContenido=new TableLayoutPanel();
+            tlpContenido=new TableLayoutPanel();
             tlpContenido.Dock=DockStyle.Fill;
             this.Controls.Add(tlpContenido);
 
@@ -96,6 +96,18 @@ namespace ControlTabla
             TextBox txt=(TextBox) tlpContenido.GetControlFromPosition(columna, fila+1);
 
             return txt.Text;
+
+        }
+
+        public void asignarValor(int fila, int columna, string valor)
+        {
+
+            //Verificar que los valores son válidos
+
+            //Acceder a la caja de texto
+            TextBox txt = (TextBox)tlpContenido.GetControlFromPosition(columna, fila + 1);
+
+            txt.Text=valor;
 
         }
     }
