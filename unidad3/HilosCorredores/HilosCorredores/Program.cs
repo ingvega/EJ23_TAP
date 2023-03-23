@@ -32,18 +32,54 @@ namespace HilosCorredores
                 });
             }
 
-            while (true)
-            {
-                //Contar cuantas tareas han finalizado
-                int cont = 0;
-                for (int ctr2 = 0; ctr2 < 10; ctr2++)
-                {
-                    if (tasks[ctr2].IsCompleted) cont++;
-                }
-                Console.WriteLine("Finalizadas " + cont);
-                if (cont == 10) break;
-            }
+
+
+            //saber qué tarea termina primero
+            //bool termino = false;
+            int indice=0, idTarea=0;
+            //while (true)
+            //{
+            //    //Contar cuantas tareas han finalizado
+            //    int cont = 0;
+            //    for (int ctr2 = 0; ctr2 < 10; ctr2++)
+            //    {
+            //        if (tasks[ctr2].IsCompleted)
+            //        {
+            //            if (!termino)
+            //            {
+            //                termino = true;
+            //                indice = ctr2;
+            //                idTarea = tasks[ctr2].Id;
+            //            }
+            //            cont++;
+            //        }
+            //    }
+            //    Console.WriteLine("Finalizadas " + cont);
+            //    if (cont == 10) break;
+            //}
+            indice = Task.WaitAny(tasks);
+            idTarea = tasks[indice].Id;
+            Console.WriteLine("Ya terminaron todas " +
+                " la primera tarea en terminar es "+
+                indice +  " id de tarea= " + idTarea);
+            //Espera a que todas las tareas terminen
+            Task.WaitAll(tasks);
+            //Console.WriteLine("Ya terminaron todas");
+
+            //Se ejecuta mientras no hayan finalizado todas las tareas
+            //while (true)
+            //{
+            //    //Contar cuantas tareas han finalizado
+            //    int cont = 0;
+            //    for (int ctr2 = 0; ctr2 < 10; ctr2++)
+            //    {
+            //        if (tasks[ctr2].IsCompleted) cont++;
+            //    }
+            //    Console.WriteLine("Finalizadas " + cont);
+            //    if (cont == 10) break;
+            //}
 
         }
+
     }
 }
