@@ -15,12 +15,12 @@ namespace HilosCorredores
         [STAThread]
         static void Main()
         {
-            //Application.EnableVisualStyles();
-            //Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new CorredoresTareas());
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new Form1());
 
             //Crear 10 tareas y verificar una impresión de 1 a 10000 en cada una (en consola)
-
+            /*
             Task[] tasks = new Task[10];
 
             for (int ctr = 0; ctr < 10; ctr++) { 
@@ -32,7 +32,7 @@ namespace HilosCorredores
                 });
             }
 
-
+            */
 
             //saber qué tarea termina primero
             //bool termino = false;
@@ -57,13 +57,16 @@ namespace HilosCorredores
             //    Console.WriteLine("Finalizadas " + cont);
             //    if (cont == 10) break;
             //}
-            indice = Task.WaitAny(tasks);
+            /*indice = Task.WaitAny(tasks);
             idTarea = tasks[indice].Id;
             Console.WriteLine("Ya terminaron todas " +
                 " la primera tarea en terminar es "+
                 indice +  " id de tarea= " + idTarea);
             //Espera a que todas las tareas terminen
             Task.WaitAll(tasks);
+
+            */
+
             //Console.WriteLine("Ya terminaron todas");
 
             //Se ejecuta mientras no hayan finalizado todas las tareas
