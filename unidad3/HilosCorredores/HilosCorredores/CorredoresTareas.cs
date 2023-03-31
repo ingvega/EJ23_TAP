@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HilosCorredores
@@ -17,22 +18,28 @@ namespace HilosCorredores
             InitializeComponent();
         }
         static Random rng = new Random();
-        private Thread t1, t2, t3;
+        //private Thread t1, t2, t3;
+        private Task[] tareas=new Task[3];
         delegate void StringArgReturnVoidDelegate(Form frm, PictureBox pb);
        
         private void CorrerProceso(Form frm, PictureBox b)
         {
-            int stp = 2;
+
+            int stp = 5;
             if (b.InvokeRequired)
             {
-                while (b.Left + b.Width + 50 < frm.Width)
+                try
                 {
-                    StringArgReturnVoidDelegate d =
-                        new StringArgReturnVoidDelegate(CorrerProceso);
-                    this.Invoke(d, new object[] { frm, b });
-                    Thread.Sleep(rng.Next(20, 80));
+                    while (b.Left + b.Width + 50 < frm.Width)
+                    {
+                        StringArgReturnVoidDelegate d =
+                            new StringArgReturnVoidDelegate(CorrerProceso);
+                        this.Invoke(d, new object[] { frm, b });
+                        Thread.Sleep(rng.Next(20, 50));
 
+                    }
                 }
+                catch (Exception){}
             }
             else
             {
@@ -40,60 +47,54 @@ namespace HilosCorredores
             }
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-         
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void pictureBox3_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void buttonIniciar1_Click(object sender, EventArgs e)
         {
-            CorrerHilo(out t1, picCorredor1);
+            CorrerTarea(out tareas[0], picCorredor1);
         }
 
         private void buttonIniciar2_Click(object sender, EventArgs e)
         {
-            CorrerHilo(out t2, picCorredor2);
+            CorrerTarea(out tareas[1], picCorredor2);
         }
 
         private void buttonIniciar3_Click(object sender, EventArgs e)
         {
-            CorrerHilo(out t3, picCorredor3);
+            CorrerTarea(out tareas[2], picCorredor3);
         }
 
         private void buttonIniciarTodos_Click(object sender, EventArgs e)
         {
-            CorrerHilo(out t1, picCorredor1);
-            CorrerHilo(out t2, picCorredor2);
-            CorrerHilo(out t3, picCorredor3);
-            ThreadStart d1 = () => Multiple();
-            Thread hilo = new Thread(d1);
-            hilo.Start();
+            
+            
+            for (int i = 0; i < tareas.Length; i++)
+            {
+                CorrerTarea(out tareas[i], (PictureBox) this.Controls["picCorredor" + (i+1)]);
+            }
+
+            //No recomendable porque pausa el hilo principal
+            //Task.WaitAny(tareas); 
+            Task.Factory.StartNew(() => {
+                int tarea=Task.WaitAny(tareas);
+                MessageBox.Show("Ya terminó la carrera"+
+                    " ganó el corredor " + (tarea + 1) );
+            });
+            
+            //Task.Factory.StartNew(() => Multiple());
         }
 
-        private void CorrerHilo(out Thread hilo ,PictureBox pb)
+        private void CorrerTarea(out Task tarea ,PictureBox pb)
         {
-            ThreadStart delegado = () => CorrerProceso(this, pb);
-            hilo = new Thread(delegado);
-            hilo.Start();
+            tarea = Task.Factory.StartNew(() => CorrerProceso(this, pb));
         }
         private void Multiple()
         {
-            while (t1.IsAlive && t2.IsAlive && t3.IsAlive);
+            while (!tareas[0].IsCompleted && !tareas[1].IsCompleted && !tareas[2].IsCompleted) ;
             int ganador;
-            if (!t1.IsAlive)
+            if (tareas[0].IsCompleted)
             {
                 ganador = 1;
-            }else if (!t2.IsAlive)
+            }
+            else if (tareas[1].IsCompleted)
             {
                 ganador = 2;
             }
@@ -101,9 +102,9 @@ namespace HilosCorredores
             {
                 ganador = 3;
             }
-            while (t1.IsAlive || t2.IsAlive || t3.IsAlive);
+            while (!tareas[0].IsCompleted || !tareas[1].IsCompleted || !tareas[2].IsCompleted) ;
             MessageBox.Show("El corredor: " + ganador + " fue el ganador");
-            
+
         }
     }
     

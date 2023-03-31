@@ -17,7 +17,7 @@ namespace HilosCorredores
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new CorredoresTareas());
 
             //Crear 10 tareas y verificar una impresión de 1 a 10000 en cada una (en consola)
             /*

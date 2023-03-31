@@ -43,7 +43,7 @@
             // buttonIniciar1
             // 
             this.buttonIniciar1.Location = new System.Drawing.Point(48, 455);
-            this.buttonIniciar1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonIniciar1.Margin = new System.Windows.Forms.Padding(4);
             this.buttonIniciar1.Name = "buttonIniciar1";
             this.buttonIniciar1.Size = new System.Drawing.Size(100, 28);
             this.buttonIniciar1.TabIndex = 3;
@@ -54,7 +54,7 @@
             // buttonIniciar2
             // 
             this.buttonIniciar2.Location = new System.Drawing.Point(157, 455);
-            this.buttonIniciar2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonIniciar2.Margin = new System.Windows.Forms.Padding(4);
             this.buttonIniciar2.Name = "buttonIniciar2";
             this.buttonIniciar2.Size = new System.Drawing.Size(100, 28);
             this.buttonIniciar2.TabIndex = 4;
@@ -65,7 +65,7 @@
             // buttonIniciar3
             // 
             this.buttonIniciar3.Location = new System.Drawing.Point(265, 455);
-            this.buttonIniciar3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonIniciar3.Margin = new System.Windows.Forms.Padding(4);
             this.buttonIniciar3.Name = "buttonIniciar3";
             this.buttonIniciar3.Size = new System.Drawing.Size(100, 28);
             this.buttonIniciar3.TabIndex = 5;
@@ -76,7 +76,7 @@
             // buttonIniciarTodos
             // 
             this.buttonIniciarTodos.Location = new System.Drawing.Point(48, 492);
-            this.buttonIniciarTodos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonIniciarTodos.Margin = new System.Windows.Forms.Padding(4);
             this.buttonIniciarTodos.Name = "buttonIniciarTodos";
             this.buttonIniciarTodos.Size = new System.Drawing.Size(317, 28);
             this.buttonIniciarTodos.TabIndex = 6;
@@ -88,39 +88,36 @@
             // 
             this.picCorredor3.Image = global::HilosCorredores.Properties.Resources.runner;
             this.picCorredor3.Location = new System.Drawing.Point(48, 303);
-            this.picCorredor3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picCorredor3.Margin = new System.Windows.Forms.Padding(4);
             this.picCorredor3.Name = "picCorredor3";
             this.picCorredor3.Size = new System.Drawing.Size(111, 97);
             this.picCorredor3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picCorredor3.TabIndex = 2;
             this.picCorredor3.TabStop = false;
-            this.picCorredor3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
             // picCorredor2
             // 
             this.picCorredor2.Image = global::HilosCorredores.Properties.Resources.runner;
             this.picCorredor2.Location = new System.Drawing.Point(48, 161);
-            this.picCorredor2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picCorredor2.Margin = new System.Windows.Forms.Padding(4);
             this.picCorredor2.Name = "picCorredor2";
             this.picCorredor2.Size = new System.Drawing.Size(111, 94);
             this.picCorredor2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picCorredor2.TabIndex = 1;
             this.picCorredor2.TabStop = false;
-            this.picCorredor2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // picCorredor1
             // 
             this.picCorredor1.Image = global::HilosCorredores.Properties.Resources.runner;
             this.picCorredor1.Location = new System.Drawing.Point(48, 28);
-            this.picCorredor1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picCorredor1.Margin = new System.Windows.Forms.Padding(4);
             this.picCorredor1.Name = "picCorredor1";
             this.picCorredor1.Size = new System.Drawing.Size(111, 102);
             this.picCorredor1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picCorredor1.TabIndex = 0;
             this.picCorredor1.TabStop = false;
-            this.picCorredor1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // Corredores
+            // CorredoresTareas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -132,8 +129,8 @@
             this.Controls.Add(this.picCorredor3);
             this.Controls.Add(this.picCorredor2);
             this.Controls.Add(this.picCorredor1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Name = "Corredores";
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Name = "CorredoresTareas";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.picCorredor3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCorredor2)).EndInit();
