@@ -12,18 +12,24 @@ namespace Datos
         public static MySqlConnection conexion;
         public bool Conectar() { 
             conexion = new MySqlConnection();
-            conexion.ConnectionString = "sever=localhost;uid=root;pwd=123;database=northwind";
+            conexion.ConnectionString = "server=localhost;uid=root;pwd=root;database=northwind";
+
             try
             {
                 conexion.Open();
                 return true;
             }
-            catch (Exception)
+            catch (MySqlException ex)
             {
 
                 return false;
             }
-            
+            catch (Exception ex)
+            {
+
+                return false;
+            }
+
         }
 
         public void Desconectar() { 
