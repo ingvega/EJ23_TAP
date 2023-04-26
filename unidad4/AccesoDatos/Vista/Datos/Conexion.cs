@@ -11,12 +11,16 @@ namespace Datos
     {
         public static MySqlConnection conexion;
         public bool Conectar() { 
-            conexion = new MySqlConnection();
-            conexion.ConnectionString = "server=localhost;uid=root;pwd=root;database=northwind";
+            
 
             try
             {
-                conexion.Open();
+                if (conexion != null && conexion.State == System.Data.ConnectionState.Open) return true;
+                
+                    conexion = new MySqlConnection();
+                    conexion.ConnectionString = "server=localhost;uid=root;pwd=root;database=northwind";
+                    conexion.Open();
+                
                 return true;
             }
             catch (MySqlException ex)

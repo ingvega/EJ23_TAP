@@ -1,4 +1,4 @@
-﻿using Datos;
+﻿
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Datos;
+using Modelos;
 
 namespace Vista
 {
@@ -19,8 +20,17 @@ namespace Vista
             InitializeComponent();
             Conexion con = new Conexion();
 
-            MessageBox.Show(con.Conectar()+"");
-            new CategoryDAO().obtenerTodas();
+            /*MessageBox.Show(con.Conectar()+"");*/
+            List<Category> categorias= new CategoryDAO().obtenerTodas();
+            dgvCaterorias.DataSource = categorias;
+
+            //Desactivar la adición, eliminación y edición el el gridview
+            dgvCaterorias.AllowUserToAddRows = false;
+            dgvCaterorias.AllowUserToDeleteRows= false;
+            dgvCaterorias.EditMode = DataGridViewEditMode.EditProgrammatically;
+
+            //Activar la selección por fila en lugar de columna
+            dgvCaterorias.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
         }
     }
