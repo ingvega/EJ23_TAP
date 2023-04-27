@@ -10,7 +10,7 @@ namespace Datos
     public class Conexion
     {
         public static MySqlConnection conexion;
-        public bool Conectar() { 
+        public static bool Conectar() { 
             
 
             try
@@ -36,8 +36,10 @@ namespace Datos
 
         }
 
-        public void Desconectar() { 
-        
+        public static void Desconectar() {
+            if (conexion != null && conexion.State == System.Data.ConnectionState.Open)
+                conexion.Close();
+
         }
     }
 }

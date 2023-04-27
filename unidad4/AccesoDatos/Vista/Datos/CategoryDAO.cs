@@ -15,8 +15,12 @@ namespace Datos
         public List<Category> obtenerTodas() {
             List<Category> lista = new List<Category>();
             //Conectarme
-            if (new Conexion().Conectar())
+            if (Conexion.Conectar())
             {
+                try
+                {
+
+                
                 //Crear la sentencia a ejecutar (SELECT)
                 String select = "SELECT CATEGORYID Clave, CATEGORYNAME,DESCRIPTION FROM CATEGORIES;";
                 //Definir un datatable para que sea llenado
@@ -42,6 +46,11 @@ namespace Datos
                 }
 
                 return lista;
+                }
+                finally
+                {
+                    Conexion.Desconectar();
+                }
             }
             else {
                 return null;

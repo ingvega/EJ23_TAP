@@ -83,6 +83,7 @@
   <ItemGroup>
     <Compile Include="CategoryDAO.cs" />
     <Compile Include="Conexion.cs" />
+    <Compile Include="EmployeeDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
