@@ -32,6 +32,9 @@ namespace Vista
                 MessageBox.Show("Usuario y/o contraseña incorrectos");
             }
 
+
+
+
         }
     }
 }
