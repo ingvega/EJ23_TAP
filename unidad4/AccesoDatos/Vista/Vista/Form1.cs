@@ -31,7 +31,34 @@ namespace Vista
 
             //Activar la selección por fila en lugar de columna
             dgvCaterorias.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvCaterorias.Columns["CategoryName"].HeaderText = "Categoría";
+            dgvCaterorias.Columns["Description"].HeaderText = "Descripción";
 
+            dgvCaterorias.Columns["CategoryId"].Visible = false;
+
+            cargarCombo();
+        }
+
+        private void cargarCombo() { 
+            cboCategorias.DataSource= new CategoryDAO().obtenerTodas();
+            cboCategorias.DisplayMember = "CategoryName";
+            cboCategorias.ValueMember = "CategoryId";
+        }
+
+        private void btnIndex_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(cboCategorias.SelectedIndex+"");
+        }
+
+        private void btnItem_Click(object sender, EventArgs e)
+        {
+            Category cat = (Category) cboCategorias.SelectedItem;
+            MessageBox.Show("Categoria:" + cat.CategoryName + " con clave: " + cat.CategoryId);
+        }
+
+        private void btnValue_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(cboCategorias.SelectedValue + "");
         }
     }
 }

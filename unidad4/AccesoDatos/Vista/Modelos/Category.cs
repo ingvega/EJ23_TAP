@@ -18,5 +18,10 @@ namespace Modelos
             CategoryName = categoryName;
             Description = description;
         }
+
+        /*public override string ToString()
+        {
+            return CategoryName;
+        }*/
     }
 }
