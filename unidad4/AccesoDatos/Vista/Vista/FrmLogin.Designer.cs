@@ -35,23 +35,24 @@
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(137, 76);
+            this.txtUsuario.Location = new System.Drawing.Point(137, 108);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(271, 22);
             this.txtUsuario.TabIndex = 0;
             // 
             // txtContrasenia
             // 
-            this.txtContrasenia.Location = new System.Drawing.Point(137, 118);
+            this.txtContrasenia.Location = new System.Drawing.Point(137, 150);
             this.txtContrasenia.Name = "txtContrasenia";
             this.txtContrasenia.Size = new System.Drawing.Size(271, 22);
             this.txtContrasenia.TabIndex = 1;
+            this.txtContrasenia.UseSystemPasswordChar = true;
             // 
             // btnIniciar
             // 
-            this.btnIniciar.Location = new System.Drawing.Point(191, 166);
+            this.btnIniciar.Location = new System.Drawing.Point(196, 209);
             this.btnIniciar.Name = "btnIniciar";
-            this.btnIniciar.Size = new System.Drawing.Size(156, 23);
+            this.btnIniciar.Size = new System.Drawing.Size(163, 36);
             this.btnIniciar.TabIndex = 2;
             this.btnIniciar.Text = "Iniciar sesión";
             this.btnIniciar.UseVisualStyleBackColor = true;
@@ -59,14 +60,16 @@
             // 
             // FrmLogin
             // 
+            this.AcceptButton = this.btnIniciar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(570, 255);
+            this.ClientSize = new System.Drawing.Size(570, 316);
             this.Controls.Add(this.btnIniciar);
             this.Controls.Add(this.txtContrasenia);
             this.Controls.Add(this.txtUsuario);
             this.Name = "FrmLogin";
-            this.Text = "FrmLogin";
+            this.Text = "Inicio de sesión - Northwind App";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmLogin_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

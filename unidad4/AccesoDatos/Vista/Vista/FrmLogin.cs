@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace Vista
 {
-    public partial class FrmLogin : Form
+    public partial class FrmLogin : MetroFramework.Forms.MetroForm
     {
         public FrmLogin()
         {
@@ -26,15 +26,20 @@ namespace Vista
 
             if (emp != null)
             {
-                MessageBox.Show("Bienvenido usuario " + emp.FullName);
+                MetroFramework.MetroMessageBox.Show(this, "Bienvenido usuario " + emp.FullName, "Northwind App", MessageBoxButtons.OK, MessageBoxIcon.Information, 120);
+                new FrmPrincipal().Show();
+                this.Hide();
+              
             }
             else {
-                MessageBox.Show("Usuario y/o contraseña incorrectos");
+                MetroFramework.MetroMessageBox.Show(this, "Usuario y/o contraseña incorrectos","Northwind App",MessageBoxButtons.OK, MessageBoxIcon.Error, 120);
+                
             }
+        }
 
-
-
-
+        private void FrmLogin_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

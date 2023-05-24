@@ -111,5 +111,10 @@ namespace Vista
             frm.MdiParent = this;
             frm.Show();
         }
+
+        private void FrmPrincipal_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
