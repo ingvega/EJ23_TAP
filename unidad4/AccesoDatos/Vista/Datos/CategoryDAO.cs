@@ -119,7 +119,7 @@ namespace Datos
                 try
                 {
                     //Crear la sentencia a ejecutar (INSERT)
-                    String select = "INSERT INTO (CATEGORYNAME,DESCRIPTION) VALUES(@nombre,@descripcion); select last_insert_id();";
+                    String select = "INSERT INTO categories (CATEGORYNAME,DESCRIPTION) VALUES(@nombre,@descripcion); select last_insert_id();";
                     
                     
                     MySqlCommand sentencia = new MySqlCommand();
